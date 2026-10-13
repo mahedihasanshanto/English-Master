@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Master</title>
+    <link rel="icon" type="image/x-icon" href="logo img/1000009602-removebg-preview.png">
+</head>
+    <!-- css link  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- daisyui link  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0b1730] text-white shadow-lg">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+
+      <!-- Logo -->
+      <a href="#home" class="flex shrink-0 items-center gap-2" aria-label="E.M English Master Home">
+        <div class="flex h-11 w-11 items-center justify-center rounded-full border-2 border-amber-400 bg-white text-sm font-extrabold text-[#0b1730]">
+          <img src="logo img/1000009602-removebg-preview.png" alt="">
+        </div>
+
+        <div>
+          <h1 class="text-base font-bold leading-tight sm:text-lg">
+            <span class="text-amber-400">E.M</span> English Master
+          </h1>
+          <p class="hidden text-[10px] tracking-wide text-slate-300 sm:block">
+            LEARN SMART • WRITE BETTER
+          </p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden items-center gap-5 lg:flex">
+        <a href="#home" class="nav-link text-sm font-medium text-amber-400">Home</a>
+        <a href="#grammar" class="nav-link text-sm transition hover:text-amber-400">Grammar</a>
+        <a href="#writing" class="nav-link text-sm transition hover:text-amber-400">Writing</a>
+        <a href="#practice" class="nav-link text-sm transition hover:text-amber-400">Practice &amp; Quiz</a>
+        <a href="#notice" class="nav-link text-sm transition hover:text-amber-400">Notice</a>
+        <a href="#about" class="nav-link text-sm transition hover:text-amber-400">About</a>
+      </div>
+
+      <!-- Search + Login + Mobile Button -->
+      <div class="flex items-center gap-2">
+
+        <form id="searchForm" class="hidden items-center rounded-full border border-slate-600 px-3 py-2 md:flex">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search lessons..."
+            aria-label="Search lessons"
+            class="w-28 bg-transparent text-sm text-white outline-none placeholder:text-slate-400 focus:w-40"
+          />
+          <button type="submit" aria-label="Search" class="text-amber-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="7" />
+              <path stroke-linecap="round" d="m16 16 4 4" />
+            </svg>
+          </button>
+        </form>
+
+        <a
+          href="#login"
+          class="hidden rounded-full bg-amber-400 px-5 py-2 text-sm font-bold text-[#0b1730] transition hover:bg-amber-300 sm:inline-flex"
+        >
+          Login
+        </a>
+
+        <button
+          id="menuButton"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-600 transition hover:bg-slate-800 lg:hidden"
+        >
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div id="mobileMenu" class="hidden border-t border-slate-700 bg-[#0b1730] px-4 pb-5 pt-3 lg:hidden">
+      <form id="mobileSearchForm" class="mb-3 flex gap-2">
+        <input
+          id="mobileSearchInput"
+          type="search"
+          placeholder="Search lessons..."
+          aria-label="Search lessons"
+          class="min-w-0 flex-1 rounded-lg border border-slate-600 bg-slate-800 px-3 py-2 text-sm text-white outline-none focus:border-amber-400"
+        />
+        <button type="submit" class="rounded-lg bg-amber-400 px-4 font-semibold text-[#0b1730]">
+          Search
+        </button>
+      </form>
+
+      <div class="flex flex-col">
+        <a href="#home" class="mobile-link rounded-lg px-3 py-3 font-medium text-amber-400 hover:bg-slate-800">Home</a>
+        <a href="#grammar" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Grammar</a>
+        <a href="#writing" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Writing</a>
+        <a href="#practice" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Practice &amp; Quiz</a>
+        <a href="#notice" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Notice</a>
+        <a href="#about" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">About</a>
+        <a href="#login" class="mobile-link mt-2 rounded-lg bg-amber-400 px-3 py-3 text-center font-bold text-[#0b1730] hover:bg-amber-300">Login</a>
+      </div>
+    </div>
+  </header>
+
+  
+
+  
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const menuIcon = document.getElementById("menuIcon");
+
+    function closeMenu() {
+      mobileMenu.classList.add("hidden");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Open navigation menu");
+
+      menuIcon.innerHTML =
+        '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
+    }
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+
+      if (isOpen) {
+        closeMenu();
+      } else {
+        mobileMenu.classList.remove("hidden");
+        menuButton.setAttribute("aria-expanded", "true");
+        menuButton.setAttribute("aria-label", "Close navigation menu");
+
+        menuIcon.innerHTML =
+          '<path stroke-linecap="round" stroke-linejoin="round" d="m6 6 12 12M18 6 6 18" />';
+      }
+    });
+
+    document.querySelectorAll(".mobile-link").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    function handleSearch(event, inputId) {
+      event.preventDefault();
+
+      const query = document.getElementById(inputId).value.trim();
+
+      if (!query) {
+        document.getElementById(inputId).focus();
+        return;
+      }
+
+      // Demo search: replace with actual lesson search later.
+      alert("Search for: " + query + "\nConnect this form to your lesson search feature.");
+    }
+
+    document.getElementById("searchForm").addEventListener("submit", (event) => {
+      handleSearch(event, "searchInput");
+    });
+
+    document.getElementById("mobileSearchForm").addEventListener("submit", (event) => {
+      handleSearch(event, "mobileSearchInput");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
