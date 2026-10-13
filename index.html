@@ -7,11 +7,11 @@
     <title>English Master</title>
     <link rel="icon" type="image/x-icon" href="logo img/1000009602-removebg-preview.png">
 </head>
-    <!-- css link  -->
-    <link rel="stylesheet" href="style.css">
-    <!-- daisyui link  -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
+<!-- css link  -->
+<link rel="stylesheet" href="style.css">
+<!-- daisyui link  -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
 
 
 
@@ -20,164 +20,1625 @@
 
 <body class="bg-slate-50 text-slate-800">
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0b1730] text-white shadow-lg">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0b1730] text-white shadow-lg">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
 
-      <!-- Logo -->
-      <a href="#home" class="flex shrink-0 items-center gap-2" aria-label="E.M English Master Home">
-        <div class="flex h-11 w-11 items-center justify-center rounded-full border-2 border-amber-400 bg-white text-sm font-extrabold text-[#0b1730]">
-          <img src="logo img/1000009602-removebg-preview.png" alt="">
+            <!-- Logo -->
+            <a href="#home" class="flex shrink-0 items-center gap-2" aria-label="E.M English Master Home">
+                <div
+                    class="flex h-11 w-11 items-center justify-center rounded-full border-2 border-amber-400 bg-white text-sm font-extrabold text-[#0b1730]">
+                    <img src="logo img/1000009602-removebg-preview.png" alt="">
+                </div>
+
+                <div>
+                    <h1 class="text-base font-bold leading-tight sm:text-lg">
+                        <span class="text-amber-400">E.M</span> English Master
+                    </h1>
+                    <p class="hidden text-[10px] tracking-wide text-slate-300 sm:block">
+                        LEARN SMART • WRITE BETTER
+                    </p>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden items-center gap-5 lg:flex">
+                <a href="#home" class="nav-link text-sm font-medium text-amber-400">Home</a>
+                <a href="#grammar" class="nav-link text-sm transition hover:text-amber-400">Grammar</a>
+                <a href="#writing" class="nav-link text-sm transition hover:text-amber-400">Writing</a>
+                <a href="#practice" class="nav-link text-sm transition hover:text-amber-400">Practice &amp; Quiz</a>
+                <a href="#notice" class="nav-link text-sm transition hover:text-amber-400">Notice</a>
+                <a href="#about" class="nav-link text-sm transition hover:text-amber-400">About</a>
+            </div>
+
+            <!-- Search + Login + Mobile Button -->
+            <div class="flex items-center gap-2">
+
+                <form id="searchForm"
+                    class="hidden items-center rounded-full border border-slate-600 px-3 py-2 md:flex">
+                    <input id="searchInput" type="search" placeholder="Search lessons..." aria-label="Search lessons"
+                        class="w-28 bg-transparent text-sm text-white outline-none placeholder:text-slate-400 focus:w-40" />
+                    <button type="submit" aria-label="Search" class="text-amber-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="7" />
+                            <path stroke-linecap="round" d="m16 16 4 4" />
+                        </svg>
+                    </button>
+                </form>
+
+                <a href="#login"
+                    class="hidden rounded-full bg-amber-400 px-5 py-2 text-sm font-bold text-[#0b1730] transition hover:bg-amber-300 sm:inline-flex">
+                    Login
+                </a>
+
+                <button id="menuButton" type="button" aria-label="Open navigation menu" aria-controls="mobileMenu"
+                    aria-expanded="false"
+                    class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-600 transition hover:bg-slate-800 lg:hidden">
+                    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Navigation -->
+        <div id="mobileMenu" class="hidden border-t border-slate-700 bg-[#0b1730] px-4 pb-5 pt-3 lg:hidden">
+            <form id="mobileSearchForm" class="mb-3 flex gap-2">
+                <input id="mobileSearchInput" type="search" placeholder="Search lessons..." aria-label="Search lessons"
+                    class="min-w-0 flex-1 rounded-lg border border-slate-600 bg-slate-800 px-3 py-2 text-sm text-white outline-none focus:border-amber-400" />
+                <button type="submit" class="rounded-lg bg-amber-400 px-4 font-semibold text-[#0b1730]">
+                    Search
+                </button>
+            </form>
+
+            <div class="flex flex-col">
+                <a href="#home"
+                    class="mobile-link rounded-lg px-3 py-3 font-medium text-amber-400 hover:bg-slate-800">Home</a>
+                <a href="#grammar" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Grammar</a>
+                <a href="#writing" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Writing</a>
+                <a href="#practice" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Practice &amp; Quiz</a>
+                <a href="#notice" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Notice</a>
+                <a href="#about" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">About</a>
+                <a href="#login"
+                    class="mobile-link mt-2 rounded-lg bg-amber-400 px-3 py-3 text-center font-bold text-[#0b1730] hover:bg-amber-300">Login</a>
+            </div>
+        </div>
+    </header>
+    <!-- main  -->
+    <main>
+        <!-- E.M English Master Responsive Hero -->
+        <section class="em-hero" id="home">
+            <div class="em-hero-bg"></div>
+            <div class="em-hero-container">
+                <!-- LEFT CONTENT -->
+                <div class="em-hero-content">
+                    <p class="em-tagline">
+                        LEARN SMART • WRITE BETTER • SCORE HIGHER
+                    </p>
+
+                    <h1>
+                        English<span> Master</span><br />
+                        with Ease
+                    </h1>
+
+                    <p class="em-description">
+                        Learn English Grammar and Writing with easy rules,
+                        Bangla explanations, examples and interactive quizzes.
+                    </p>
+
+                    <form class="em-search" id="emSearch">
+                        <span class="em-search-icon">⌕</span>
+                        <input type="search" id="emSearchInput" placeholder="Search " aria-label="Search lessons" />
+                        <button type="submit">Search</button>
+                    </form>
+
+                    <p class="em-search-message" id="emSearchMessage"></p>
+
+                    <div class="em-buttons">
+                        <a href="#grammar" class="em-btn-primary">
+                            📖 Start Learning <span>→</span>
+                        </a>
+
+                        <a href="#about" class="em-btn-secondary">
+                            <span class="em-play">▶</span> Watch Intro
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE: YOUR IMAGE -->
+                <div class="em-hero-image">
+                    <!-- Replace this image URL with your own image path -->
+                    <img src="logo img/Read_my_textbooks_for_class__I_don_t_really_read_my_textbooks_for_class_often_and_I_really_need_to_start_reading_them_to_improve_my_chances_of_getting_good_grades_-removebg-preview.png"
+                        alt="English learning books and graduation cap" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet Our Teachers Section -->
+        <section id="teachers" class="bg-slate-900 py-16 md:py-20">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+                <!-- Heading -->
+                <div class=" mb-12 max-w-2xl ">
+                    <span class="inline-block rounded-full bg-amber-400/10 px-4 py-2
+        text-sm font-bold text-amber-400">
+                        LEARN FROM THE BEST
+                    </span>
+
+                    <h2 class="mt-5 text-3xl font-extrabold text-white sm:text-4xl">
+                        Meet Our <span class="text-amber-400">Teachers</span>
+                    </h2>
+
+                    <p class="mt-4 leading-7 text-slate-300">
+                        Learn English with guidance, practice, and easy-to-follow lessons.
+                    </p>
+                </div>
+
+                <!-- Teacher Cards -->
+                <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+
+                    <!-- Teacher 1 -->
+                    <article class="group overflow-hidden rounded-2xl border
+        border-white/10 bg-white transition duration-300
+        hover:-translate-y-2 hover:shadow-2xl">
+
+                        <div class="h-64 overflow-hidden bg-slate-200">
+                            <img src="img/download (2).jpeg" alt="English grammar teacher" loading="lazy" class="h-full w-full object-cover object-top
+              transition duration-500 group-hover:scale-105" />
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider
+            text-amber-600">
+                                Grammar Instructor
+                            </span>
+
+                            <h3 class="mt-2 text-xl font-extrabold text-slate-900">
+                               MD: Shamol Mia
+                            </h3>
+
+                            <p class="mt-3 text-sm leading-6 text-slate-600">
+                                Learn grammar rules, sentence structure, tense, voice,
+                                and narration through simple lessons.
+                            </p>
+
+                            <a href="img/file_00000000b18481f5a0c877411ea8e5bf.png" class="mt-5 inline-flex items-center gap-2 rounded-xl
+            bg-slate-900 px-5 py-3 text-sm font-bold text-white
+            transition hover:bg-amber-400 hover:text-slate-950">
+                                View Profile <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Teacher 2 -->
+                    <article class="group overflow-hidden rounded-2xl border
+        border-white/10 bg-white transition duration-300
+        hover:-translate-y-2 hover:shadow-2xl">
+
+                        <div class="h-64 overflow-hidden bg-slate-200">
+                            <img src="img/file_00000000b18481f5a0c877411ea8e5bf.png" alt="English writing teacher" loading="lazy" class="h-full w-full object-cover object-top
+              transition duration-500 group-hover:scale-105" />
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider
+            text-amber-600">
+                                Writing Instructor
+                            </span>
+
+                            <h3 class="mt-2 text-xl font-extrabold text-slate-900">
+                                Teacher Name
+                            </h3>
+
+                            <p class="mt-3 text-sm leading-6 text-slate-600">
+                                Improve paragraph, essay, application, email,
+                                and precis writing with structured practice.
+                            </p>
+
+                            <a href="img/download (2).jpeg" class="mt-5 inline-flex items-center gap-2 rounded-xl
+            bg-slate-900 px-5 py-3 text-sm font-bold text-white
+            transition hover:bg-amber-400 hover:text-slate-950">
+                                View Profile <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Teacher 3 -->
+                    <article class="group overflow-hidden rounded-2xl border
+        border-white/10 bg-white transition duration-300
+        hover:-translate-y-2 hover:shadow-2xl">
+
+                        <div class="h-64 overflow-hidden bg-slate-200">
+                            <img src="img/download (2).jpeg" alt="English practice teacher" loading="lazy" class="h-70 w-100 object-cover object-top
+              transition duration-500 group-hover:scale-105" />
+                        </div>
+
+                        <div class="p-6">
+                            <span class="text-xs font-bold uppercase tracking-wider
+            text-amber-600">
+                                Practice Instructor
+                            </span>
+
+                            <h3 class="mt-2 text-xl font-extrabold text-slate-900">
+                                Teacher Name
+                            </h3>
+
+                            <p class="mt-3 text-sm leading-6 text-slate-600">
+                                Strengthen your English skills with quizzes,
+                                vocabulary exercises, and revision lessons.
+                            </p>
+
+                            <a href="teachers/teacher-3.html" class="mt-5 inline-flex items-center gap-2 rounded-xl
+            bg-slate-900 px-5 py-3 text-sm font-bold text-white
+            transition hover:bg-amber-400 hover:text-slate-950">
+                                View Profile <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Bottom Text -->
+                <div class="mt-12 text-center">
+                    <p class="text-sm text-slate-300">
+                        Learn Smart <span class="mx-2 text-amber-400">•</span>
+                        Write Better <span class="mx-2 text-amber-400">•</span>
+                        Score Higher
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+        <!-- ================= GRAMMAR SECTION ================= -->
+        <section id="grammar" class="bg-slate-50 px-5 py-16 md:px-10 lg:px-16 lg:py-24">
+
+            <div class="mx-auto max-w-7xl">
+
+                <!-- Section Heading -->
+                <div class="mb-10 flex items-center justify-between gap-5">
+
+                    <div>
+                        <span class="text-xs font-extrabold uppercase tracking-[3px] text-yellow-600">
+                            Build Your Foundation
+                        </span>
+
+                        <h2 class="mt-3 font-serif text-4xl font-extrabold text-[#102747] md:text-5xl">
+                            English <span class="text-yellow-600">Grammar</span>
+                        </h2>
+
+                        <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-500 md:text-base">
+                            Master English grammar step by step with easy rules,
+                            Bangla explanations, examples and interactive practice.
+                        </p>
+                    </div>
+
+                    <div
+                        class="hidden h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-[#071a33] text-3xl sm:flex">
+                        📚
+                    </div>
+
+                </div>
+
+
+                <!-- Search Bar -->
+                <div class="mb-6 max-w-xl">
+                    <label for="grammarSearch" class="sr-only">
+                        Search grammar topics
+                    </label>
+
+                    <div
+                        class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm focus-within:border-yellow-500">
+                        <svg class="h-5 w-5 shrink-0 text-slate-400" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7" stroke-width="2" />
+                            <path d="m16 16 4 4" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+
+                        <input id="grammarSearch" type="search" placeholder="Search grammar topics..."
+                            class="w-full bg-transparent text-sm text-slate-700 outline-none placeholder:text-slate-400" />
+                    </div>
+                </div>
+
+
+                <!-- Category Filters -->
+                <div class="mb-8 flex flex-wrap gap-3">
+
+                    <button data-level="all"
+                        class="grammar-filter rounded-full bg-[#071a33] px-5 py-2.5 text-sm font-bold text-yellow-300 transition hover:bg-[#102747]">
+                        All Topics
+                    </button>
+
+                    <button data-level="basic"
+                        class="grammar-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold text-slate-600 transition hover:border-yellow-500 hover:text-yellow-700">
+                        Basic
+                    </button>
+
+                    <button data-level="intermediate"
+                        class="grammar-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold text-slate-600 transition hover:border-yellow-500 hover:text-yellow-700">
+                        Intermediate
+                    </button>
+
+                    <button data-level="advanced"
+                        class="grammar-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-bold text-slate-600 transition hover:border-yellow-500 hover:text-yellow-700">
+                        Advanced
+                    </button>
+
+                </div>
+
+
+                <!-- Grammar Cards -->
+                <div id="grammarGrid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+
+                    <!-- Tense -->
+                    <article data-level="basic"
+                        class="grammar-card rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-xl">
+
+                        <div class="mb-5 flex items-center justify-between">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-100 text-2xl">
+                                ⏰
+                            </div>
+                            <span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">
+                                Basic
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#102747]">Tense</h3>
+
+                        <p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-500">
+                            Present, Past ও Future Tense-এর নিয়ম এবং উদাহরণ শেখো।
+                        </p>
+
+                        <a href="lessons/tense.html"
+                            class="mt-5 inline-flex items-center gap-2 font-bold text-yellow-700 transition hover:gap-3">
+                            Learn More <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- Parts of Speech -->
+                    <article data-level="basic"
+                        class="grammar-card rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-xl">
+
+                        <div class="mb-5 flex items-center justify-between">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-pink-100 text-2xl">
+                                📝
+                            </div>
+                            <span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">
+                                Basic
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#102747]">Parts of Speech</h3>
+
+                        <p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-500">
+                            Noun, Pronoun, Verb, Adjective এবং অন্যান্য Parts শেখো।
+                        </p>
+
+                        <a href="lessons/parts-of-speech.html"
+                            class="mt-5 inline-flex items-center gap-2 font-bold text-yellow-700 transition hover:gap-3">
+                            Learn More <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- Voice -->
+                    <article data-level="intermediate"
+                        class="grammar-card rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-xl">
+
+                        <div class="mb-5 flex items-center justify-between">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-2xl">
+                                🔄
+                            </div>
+                            <span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">
+                                Intermediate
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#102747]">Voice Change</h3>
+
+                        <p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-500">
+                            Active Voice থেকে Passive Voice করার নিয়ম ও অনুশীলন।
+                        </p>
+
+                        <a href="lessons/voice.html"
+                            class="mt-5 inline-flex items-center gap-2 font-bold text-yellow-700 transition hover:gap-3">
+                            Learn More <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- Narration -->
+                    <article data-level="intermediate"
+                        class="grammar-card rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-xl">
+
+                        <div class="mb-5 flex items-center justify-between">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-2xl">
+                                💬
+                            </div>
+                            <span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">
+                                Intermediate
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#102747]">Narration</h3>
+
+                        <p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-500">
+                            Direct ও Indirect Speech-এর নিয়ম উদাহরণসহ শেখো।
+                        </p>
+
+                        <a href="lessons/narration.html"
+                            class="mt-5 inline-flex items-center gap-2 font-bold text-yellow-700 transition hover:gap-3">
+                            Learn More <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- Article -->
+                    <article data-level="basic"
+                        class="grammar-card rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-xl">
+
+                        <div class="mb-5 flex items-center justify-between">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-2xl">
+                                🔤
+                            </div>
+                            <span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">
+                                Basic
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#102747]">Article</h3>
+
+                        <p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-500">
+                            A, An ও The-এর সঠিক ব্যবহার এবং প্রয়োজনীয় নিয়ম শেখো।
+                        </p>
+
+                        <a href="lessons/article.html"
+                            class="mt-5 inline-flex items-center gap-2 font-bold text-yellow-700 transition hover:gap-3">
+                            Learn More <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- Preposition -->
+                    <article data-level="intermediate"
+                        class="grammar-card rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-xl">
+
+                        <div class="mb-5 flex items-center justify-between">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-100 text-2xl">
+                                🧩
+                            </div>
+                            <span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">
+                                Intermediate
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#102747]">Preposition</h3>
+
+                        <p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-500">
+                            In, On, At এবং অন্যান্য Preposition-এর ব্যবহার শেখো।
+                        </p>
+
+                        <a href="lessons/preposition.html"
+                            class="mt-5 inline-flex items-center gap-2 font-bold text-yellow-700 transition hover:gap-3">
+                            Learn More <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- Sentence Transformation -->
+                    <article data-level="advanced"
+                        class="grammar-card rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-xl">
+
+                        <div class="mb-5 flex items-center justify-between">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-100 text-2xl">
+                                ✍️
+                            </div>
+                            <span class="rounded-full bg-rose-50 px-3 py-1 text-xs font-bold text-rose-700">
+                                Advanced
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#102747]">Sentence Transformation</h3>
+
+                        <p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-500">
+                            অর্থ ঠিক রেখে Sentence-এর গঠন পরিবর্তন করতে শেখো।
+                        </p>
+
+                        <a href="lessons/sentence-transformation.html"
+                            class="mt-5 inline-flex items-center gap-2 font-bold text-yellow-700 transition hover:gap-3">
+                            Learn More <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- Conditional Sentences -->
+                    <article data-level="advanced"
+                        class="grammar-card rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-xl">
+
+                        <div class="mb-5 flex items-center justify-between">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-2xl">
+                                📖
+                            </div>
+                            <span class="rounded-full bg-rose-50 px-3 py-1 text-xs font-bold text-rose-700">
+                                Advanced
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#102747]">Conditional Sentences</h3>
+
+                        <p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-500">
+                            Zero, First, Second ও Third Conditional-এর নিয়ম শেখো।
+                        </p>
+
+                        <a href="lessons/conditionals.html"
+                            class="mt-5 inline-flex items-center gap-2 font-bold text-yellow-700 transition hover:gap-3">
+                            Learn More <span>→</span>
+                        </a>
+                    </article>
+
+
+                    <!-- Subject Verb Agreement -->
+                    <article data-level="basic"
+                        class="grammar-card rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-yellow-400 hover:shadow-xl">
+
+                        <div class="mb-5 flex items-center justify-between">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-100 text-2xl">
+                                🔗
+                            </div>
+                            <span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">
+                                Basic
+                            </span>
+                        </div>
+
+                        <h3 class="text-xl font-bold text-[#102747]">Subject-Verb Agreement</h3>
+
+                        <p class="mt-3 min-h-[72px] text-sm leading-7 text-slate-500">
+                            Subject অনুযায়ী সঠিক Verb ব্যবহারের নিয়ম শেখো।
+                        </p>
+
+                        <a href="lessons/subject-verb-agreement.html"
+                            class="mt-5 inline-flex items-center gap-2 font-bold text-yellow-700 transition hover:gap-3">
+                            Learn More <span>→</span>
+                        </a>
+                    </article>
+
+                </div>
+
+                <!-- Empty Search Message -->
+                <p id="grammarEmpty" class="mt-8 hidden text-center text-sm text-slate-500">
+                    No grammar topics found. Try another search.
+                </p>
+
+            </div>
+        </section>
+        <!-- ================= GRAMMAR SEARCH & FILTER JS ================= -->
+        <script>
+            const grammarSearch = document.getElementById("grammarSearch");
+            const grammarFilters = document.querySelectorAll(".grammar-filter");
+            const grammarCards = document.querySelectorAll(".grammar-card");
+            const grammarEmpty = document.getElementById("grammarEmpty");
+
+            let selectedLevel = "all";
+
+            function filterGrammar() {
+                const searchText = grammarSearch.value.trim().toLowerCase();
+                let visibleCount = 0;
+
+                grammarCards.forEach(card => {
+                    const title = card.querySelector("h3").textContent.toLowerCase();
+                    const description = card.querySelector("p").textContent.toLowerCase();
+                    const level = card.dataset.level;
+
+                    const matchesSearch =
+                        title.includes(searchText) ||
+                        description.includes(searchText);
+
+                    const matchesLevel =
+                        selectedLevel === "all" || selectedLevel === level;
+
+                    const isVisible = matchesSearch && matchesLevel;
+
+                    card.hidden = !isVisible;
+
+                    if (isVisible) visibleCount++;
+                });
+
+                grammarEmpty.classList.toggle("hidden", visibleCount !== 0);
+            }
+
+            grammarSearch.addEventListener("input", filterGrammar);
+
+            grammarFilters.forEach(button => {
+                button.addEventListener("click", () => {
+                    selectedLevel = button.dataset.level;
+
+                    grammarFilters.forEach(filter => {
+                        filter.classList.remove("bg-[#071a33]", "text-yellow-300");
+                        filter.classList.add("border", "border-slate-200", "bg-white", "text-slate-600");
+                    });
+
+                    button.classList.add("bg-[#071a33]", "text-yellow-300");
+                    button.classList.remove("border", "border-slate-200", "bg-white", "text-slate-600");
+
+                    filterGrammar();
+                });
+            });
+        </script>
+
+        <!-- ================= GRAMMAR SECTION END ================= -->
+
+        <!-- Writing Section | E.M English Master -->
+        <section id="writing" class="bg-slate-50 py-16 md:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+                <!-- Section Header -->
+                <div class=" mb-10 max-w-3xl text-left">
+                    <span class="inline-block rounded-full  px-4 py-2 text-sm font-bold text-amber-700">
+                        ✍️ Improve Your Writing
+                    </span>
+
+                    <h2 class="mt-5 text-3xl font-extrabold text-slate-900 sm:text-4xl md:text-5xl">
+                        Writing <span class="text-amber-500">Mastery</span>
+                    </h2>
+
+                    <p class="mt-4 text-base leading-7 text-slate-600 md:text-lg">
+                        Learn English writing step by step. Explore examples, follow
+                        easy structures, and improve your writing skills with practice.
+                    </p>
+                </div>
+
+                <!-- Search -->
+                <div class=" mb-8 max-w-2xl">
+                    <div class="relative">
+                        <input id="writingSearch" type="text" placeholder="Search Paragraph, Essay, Application..."
+                            class="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 pr-12 text-slate-800 shadow-sm outline-none transition focus:border-amber-400 focus:ring-4 focus:ring-amber-100" />
+                        <span class="absolute right-5 top-1/2 -translate-y-1/2 text-xl">
+                            🔎
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="mb-10 flex flex-wrap justify-start gap-3">
+                    <button data-filter="all"
+                        class="writing-filter rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-amber-500">
+                        All Writing
+                    </button>
+
+                    <button data-filter="academic"
+                        class="writing-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-amber-100">
+                        Academic
+                    </button>
+
+                    <button data-filter="official"
+                        class="writing-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-amber-100">
+                        Official Writing
+                    </button>
+
+                    <button data-filter="creative"
+                        class="writing-filter rounded-full border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-amber-100">
+                        Creative
+                    </button>
+                </div>
+
+                <!-- Writing Cards -->
+                <div id="writingGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                    <!-- Paragraph -->
+                    <article data-category="academic"
+                        class="writing-card group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="flex items-start justify-between">
+                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-100 text-3xl">
+                                📝
+                            </div>
+                            <span
+                                class="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">Basic</span>
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Paragraph Writing</h3>
+                        <p class="mt-3 text-sm leading-6 text-slate-600">
+                            Learn paragraph structure, topic sentences, supporting ideas,
+                            and conclusions with easy examples.
+                        </p>
+                        <a href="writing/paragraph.html"
+                            class="mt-6 inline-flex items-center gap-2 font-bold text-amber-600 transition group-hover:gap-3">
+                            Start Learning <span>→</span>
+                        </a>
+                    </article>
+
+                    <!-- Essay -->
+                    <article data-category="academic"
+                        class="writing-card group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="flex items-start justify-between">
+                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-100 text-3xl">
+                                📚
+                            </div>
+                            <span
+                                class="rounded-full bg-yellow-100 px-3 py-1 text-xs font-bold text-yellow-700">Intermediate</span>
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Essay Writing</h3>
+                        <p class="mt-3 text-sm leading-6 text-slate-600">
+                            Practice introductions, body paragraphs, conclusions, and
+                            organized essays on common topics.
+                        </p>
+                        <a href="writing/essay.html"
+                            class="mt-6 inline-flex items-center gap-2 font-bold text-amber-600 transition group-hover:gap-3">
+                            Start Learning <span>→</span>
+                        </a>
+                    </article>
+
+                    <!-- Application -->
+                    <article data-category="official"
+                        class="writing-card group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="flex items-start justify-between">
+                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100 text-3xl">
+                                📄
+                            </div>
+                            <span
+                                class="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">Basic</span>
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Application Writing</h3>
+                        <p class="mt-3 text-sm leading-6 text-slate-600">
+                            Learn formal application formats for leave, certificates,
+                            financial assistance, and other purposes.
+                        </p>
+                        <a href="writing/application.html"
+                            class="mt-6 inline-flex items-center gap-2 font-bold text-amber-600 transition group-hover:gap-3">
+                            Start Learning <span>→</span>
+                        </a>
+                    </article>
+
+                    <!-- Email -->
+                    <article data-category="official"
+                        class="writing-card group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-100 text-3xl">
+                            ✉️
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Email Writing</h3>
+                        <p class="mt-3 text-sm leading-6 text-slate-600">
+                            Write clear formal and informal emails with proper greetings,
+                            messages, and closing lines.
+                        </p>
+                        <a href="writing/email.html"
+                            class="mt-6 inline-flex items-center gap-2 font-bold text-amber-600 transition group-hover:gap-3">
+                            Start Learning <span>→</span>
+                        </a>
+                    </article>
+
+                    <!-- Letter -->
+                    <article data-category="official"
+                        class="writing-card group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-pink-100 text-3xl">
+                            💌
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Letter Writing</h3>
+                        <p class="mt-3 text-sm leading-6 text-slate-600">
+                            Explore friendly letters, formal letters, letter formats,
+                            and useful expressions.
+                        </p>
+                        <a href="writing/letter.html"
+                            class="mt-6 inline-flex items-center gap-2 font-bold text-amber-600 transition group-hover:gap-3">
+                            Start Learning <span>→</span>
+                        </a>
+                    </article>
+
+                    <!-- Report -->
+                    <article data-category="official"
+                        class="writing-card group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-100 text-3xl">
+                            📰
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Report Writing</h3>
+                        <p class="mt-3 text-sm leading-6 text-slate-600">
+                            Learn report structure, headlines, factual descriptions,
+                            and how to present information clearly.
+                        </p>
+                        <a href="writing/report.html"
+                            class="mt-6 inline-flex items-center gap-2 font-bold text-amber-600 transition group-hover:gap-3">
+                            Start Learning <span>→</span>
+                        </a>
+                    </article>
+
+                    <!-- Dialogue -->
+                    <article data-category="creative"
+                        class="writing-card group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-100 text-3xl">
+                            💬
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Dialogue Writing</h3>
+                        <p class="mt-3 text-sm leading-6 text-slate-600">
+                            Create natural conversations between two people using
+                            simple, meaningful English sentences.
+                        </p>
+                        <a href="writing/dialogue.html"
+                            class="mt-6 inline-flex items-center gap-2 font-bold text-amber-600 transition group-hover:gap-3">
+                            Start Learning <span>→</span>
+                        </a>
+                    </article>
+
+                    <!-- Story -->
+                    <article data-category="creative"
+                        class="writing-card group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-rose-100 text-3xl">
+                            📖
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Story Writing</h3>
+                        <p class="mt-3 text-sm leading-6 text-slate-600">
+                            Improve storytelling with a clear beginning, interesting
+                            events, and a meaningful ending.
+                        </p>
+                        <a href="writing/story.html"
+                            class="mt-6 inline-flex items-center gap-2 font-bold text-amber-600 transition group-hover:gap-3">
+                            Start Learning <span>→</span>
+                        </a>
+                    </article>
+
+                    <!-- Precis -->
+                    <article data-category="academic"
+                        class="writing-card group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-100 text-3xl">
+                            ✍️
+                        </div>
+                        <h3 class="mt-5 text-xl font-bold text-slate-900">Precis Writing</h3>
+                        <p class="mt-3 text-sm leading-6 text-slate-600">
+                            Learn how to summarize a passage accurately, identify
+                            main ideas, and write a concise precis.
+                        </p>
+                        <a href="writing/precis.html"
+                            class="mt-6 inline-flex items-center gap-2 font-bold text-amber-600 transition group-hover:gap-3">
+                            Start Learning <span>→</span>
+                        </a>
+                    </article>
+
+                </div>
+
+                <!-- No Results -->
+                <p id="writingEmpty" class="hidden py-12 text-center text-slate-500">
+                    No writing topics found. Try another search.
+                </p>
+
+                <!-- Bottom CTA -->
+                <div class="mt-14 rounded-3xl bg-slate-900 px-6 py-10 text-center sm:px-10">
+                    <h3 class="text-2xl font-bold text-white md:text-3xl">
+                        Practice Today, Write Better Tomorrow.
+                    </h3>
+                    <p class="mx-auto mt-3 max-w-2xl leading-7 text-slate-300">
+                        Consistent practice is the key to becoming a confident English writer.
+                    </p>
+                    <a href="#practice"
+                        class="mt-6 inline-flex rounded-xl bg-amber-400 px-7 py-3 font-bold text-slate-950 transition hover:bg-amber-300">
+                        Start Practicing →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Search and Filter JavaScript -->
+        <script>
+            const writingSearch = document.getElementById("writingSearch");
+            const writingCards = document.querySelectorAll(".writing-card");
+            const writingFilters = document.querySelectorAll(".writing-filter");
+            const writingEmpty = document.getElementById("writingEmpty");
+
+            let activeWritingFilter = "all";
+
+            function filterWritingCards() {
+                const searchText = writingSearch.value.toLowerCase().trim();
+                let visibleCount = 0;
+
+                writingCards.forEach((card) => {
+                    const matchesSearch = card.textContent
+                        .toLowerCase()
+                        .includes(searchText);
+
+                    const matchesCategory =
+                        activeWritingFilter === "all" ||
+                        card.dataset.category === activeWritingFilter;
+
+                    const isVisible = matchesSearch && matchesCategory;
+                    card.classList.toggle("hidden", !isVisible);
+
+                    if (isVisible) visibleCount++;
+                });
+
+                writingEmpty.classList.toggle("hidden", visibleCount !== 0);
+            }
+
+            writingSearch.addEventListener("input", filterWritingCards);
+
+            writingFilters.forEach((button) => {
+                button.addEventListener("click", () => {
+                    activeWritingFilter = button.dataset.filter;
+
+                    writingFilters.forEach((filterButton) => {
+                        filterButton.classList.remove("bg-slate-900", "text-white");
+                        filterButton.classList.add(
+                            "border",
+                            "border-slate-200",
+                            "bg-white",
+                            "text-slate-700"
+                        );
+                    });
+
+                    button.classList.add("bg-slate-900", "text-white");
+                    button.classList.remove(
+                        "border",
+                        "border-slate-200",
+                        "bg-white",
+                        "text-slate-700"
+                    );
+
+                    filterWritingCards();
+                });
+            });
+        </script>
+        <!-- ================= Writing SECTION END ================= -->
+
+
+        <!-- Practice & Quiz Section -->
+        <section id="practice" class="bg-white py-16 md:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+                <!-- Header -->
+                <div class=" mb-12 max-w-3xl ">
+                    <span class="inline-block rounded-full  px-4 py-2 text-sm font-bold text-amber-700">
+                        🎯 Test Your Knowledge
+                    </span>
+
+                    <h2 class="mt-5 text-3xl font-extrabold text-slate-900 sm:text-4xl md:text-5xl">
+                        Practice <span class="text-amber-500">& Quiz</span>
+                    </h2>
+
+                    <p class="mt-4 leading-7 text-slate-600 md:text-lg">
+                        Practice English every day, test your knowledge, and track
+                        your progress with interactive quizzes.
+                    </p>
+                </div>
+
+                <!-- Stats -->
+                <div class="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                    <div class="rounded-2xl border border-slate-100 bg-slate-50 p-5 text-center">
+                        <div class="text-3xl">📚</div>
+                        <h3 class="mt-2 font-bold text-slate-900">Grammar Practice</h3>
+                        <p class="mt-1 text-sm text-slate-500">Learn rules and test yourself</p>
+                    </div>
+
+                    <div class="rounded-2xl border border-slate-100 bg-slate-50 p-5 text-center">
+                        <div class="text-3xl">🔤</div>
+                        <h3 class="mt-2 font-bold text-slate-900">Vocabulary Quiz</h3>
+                        <p class="mt-1 text-sm text-slate-500">Build your word power</p>
+                    </div>
+
+                    <div class="rounded-2xl border border-slate-100 bg-slate-50 p-5 text-center">
+                        <div class="text-3xl">✍️</div>
+                        <h3 class="mt-2 font-bold text-slate-900">Writing Practice</h3>
+                        <p class="mt-1 text-sm text-slate-500">Improve your writing skills</p>
+                    </div>
+                </div>
+
+                <!-- Practice Cards -->
+                <div class="mt-14">
+                    <h3 class="mb-6 text-center text-2xl font-extrabold text-slate-900">
+                        Explore Practice Topics
+                    </h3>
+
+                    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                        <a href="practice/grammar.html"
+                            class="group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg">
+                            <div class="text-3xl">📘</div>
+                            <h4 class="mt-4 text-lg font-bold text-slate-900">Grammar Quiz</h4>
+                            <p class="mt-2 text-sm leading-6 text-slate-600">
+                                Practice tense, voice, narration, articles, and prepositions.
+                            </p>
+                            <span class="mt-4 inline-block font-bold text-amber-600">Practice Now →</span>
+                        </a>
+
+                        <a href="practice/vocabulary.html"
+                            class="group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg">
+                            <div class="text-3xl">🔤</div>
+                            <h4 class="mt-4 text-lg font-bold text-slate-900">Vocabulary Quiz</h4>
+                            <p class="mt-2 text-sm leading-6 text-slate-600">
+                                Learn synonyms, antonyms, meanings, and new English words.
+                            </p>
+                            <span class="mt-4 inline-block font-bold text-amber-600">Practice Now →</span>
+                        </a>
+
+                        <a href="practice/writing.html"
+                            class="group rounded-2xl border border-slate-200 p-6 transition hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg">
+                            <div class="text-3xl">✍️</div>
+                            <h4 class="mt-4 text-lg font-bold text-slate-900">Writing Practice</h4>
+                            <p class="mt-2 text-sm leading-6 text-slate-600">
+                                Practice paragraph, essay, application, and precis writing.
+                            </p>
+                            <span class="mt-4 inline-block font-bold text-amber-600">Practice Now →</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Quiz JavaScript -->
+        <script>
+            const quizQuestions = [
+                {
+                    question: "She _____ to school every day.",
+                    options: ["go", "goes", "going", "gone"],
+                    answer: 1,
+                    explanation: "With 'she' in the simple present tense, use 'goes'."
+                },
+                {
+                    question: "I _____ my homework yesterday.",
+                    options: ["do", "does", "did", "doing"],
+                    answer: 2,
+                    explanation: "'Yesterday' indicates the past. The past form is 'did'."
+                },
+                {
+                    question: "He is _____ honest man.",
+                    options: ["a", "an", "the", "no article"],
+                    answer: 1,
+                    explanation: "Use 'an' before the vowel sound in 'honest'."
+                },
+                {
+                    question: "What is the synonym of 'Happy'?",
+                    options: ["Sad", "Angry", "Joyful", "Tired"],
+                    answer: 2,
+                    explanation: "'Joyful' means happy or full of joy."
+                },
+                {
+                    question: "They _____ playing football now.",
+                    options: ["is", "am", "are", "be"],
+                    answer: 2,
+                    explanation: "Use 'are' with 'they' in the present continuous tense."
+                },
+                {
+                    question: "What is the antonym of 'Ancient'?",
+                    options: ["Old", "Modern", "Historic", "Past"],
+                    answer: 1,
+                    explanation: "'Modern' is the opposite of 'ancient'."
+                },
+                {
+                    question: "Choose the correct sentence.",
+                    options: [
+                        "He do not like tea.",
+                        "He does not likes tea.",
+                        "He does not like tea.",
+                        "He not like tea."
+                    ],
+                    answer: 2,
+                    explanation: "After 'does not', use the base form 'like'."
+                },
+                {
+                    question: "The book is _____ the table.",
+                    options: ["in", "on", "at", "by"],
+                    answer: 1,
+                    explanation: "Use 'on' when something rests on a surface."
+                },
+                {
+                    question: "What is the plural of 'Child'?",
+                    options: ["Childs", "Childes", "Children", "Childrens"],
+                    answer: 2,
+                    explanation: "'Children' is the irregular plural of 'child'."
+                },
+                {
+                    question: "If I _____ rich, I would help the poor.",
+                    options: ["am", "was", "were", "be"],
+                    answer: 2,
+                    explanation: "In this hypothetical conditional, 'were' is the standard form."
+                }
+            ];
+
+            const quizContent = document.getElementById("quizContent");
+            const quizResult = document.getElementById("quizResult");
+            const quizQuestion = document.getElementById("quizQuestion");
+            const quizOptions = document.getElementById("quizOptions");
+            const quizFeedback = document.getElementById("quizFeedback");
+            const quizCounter = document.getElementById("quizCounter");
+            const quizProgress = document.getElementById("quizProgress");
+            const quizScore = document.getElementById("quizScore");
+            const nextQuestion = document.getElementById("nextQuestion");
+
+            let currentQuestion = 0;
+            let score = 0;
+            let answered = false;
+
+            function loadQuestion() {
+                answered = false;
+
+                const q = quizQuestions[currentQuestion];
+
+                quizCounter.textContent =
+                    `Question ${currentQuestion + 1} / ${quizQuestions.length}`;
+
+                quizProgress.style.width =
+                    `${(currentQuestion / quizQuestions.length) * 100}%`;
+
+                quizQuestion.textContent = q.question;
+                quizOptions.innerHTML = "";
+                quizFeedback.className = "mt-4 hidden rounded-xl p-4 text-sm font-semibold";
+                quizFeedback.textContent = "";
+                nextQuestion.disabled = true;
+
+                q.options.forEach((option, index) => {
+                    const button = document.createElement("button");
+
+                    button.type = "button";
+                    button.className =
+                        "w-full rounded-xl border border-slate-200 p-4 text-left font-medium text-slate-700 transition hover:border-amber-400 hover:bg-amber-50";
+
+                    button.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
+                    button.addEventListener("click", () => selectAnswer(index));
+
+                    quizOptions.appendChild(button);
+                });
+
+                quizScore.textContent = `Score: ${score}`;
+            }
+
+            function selectAnswer(selectedIndex) {
+                if (answered) return;
+
+                answered = true;
+
+                const q = quizQuestions[currentQuestion];
+                const buttons = quizOptions.querySelectorAll("button");
+
+                buttons.forEach((button, index) => {
+                    button.disabled = true;
+                    button.classList.remove(
+                        "hover:border-amber-400",
+                        "hover:bg-amber-50"
+                    );
+
+                    if (index === q.answer) {
+                        button.classList.add("border-green-500", "bg-green-50", "text-green-800");
+                    } else if (index === selectedIndex) {
+                        button.classList.add("border-red-400", "bg-red-50", "text-red-800");
+                    }
+                });
+
+                if (selectedIndex === q.answer) {
+                    score++;
+                    quizFeedback.textContent = `Correct! ${q.explanation}`;
+                    quizFeedback.className =
+                        "mt-4 rounded-xl bg-green-50 p-4 text-sm font-semibold text-green-800";
+                } else {
+                    quizFeedback.textContent = `Not quite. Correct answer: ${q.options[q.answer]}. ${q.explanation}`;
+                    quizFeedback.className =
+                        "mt-4 rounded-xl bg-red-50 p-4 text-sm font-semibold text-red-800";
+                }
+
+                quizScore.textContent = `Score: ${score}`;
+                quizProgress.style.width =
+                    `${((currentQuestion + 1) / quizQuestions.length) * 100}%`;
+
+                nextQuestion.disabled = false;
+                nextQuestion.textContent =
+                    currentQuestion === quizQuestions.length - 1
+                        ? "See Results →"
+                        : "Next Question →";
+            }
+
+            nextQuestion.addEventListener("click", () => {
+                if (!answered) return;
+
+                currentQuestion++;
+
+                if (currentQuestion < quizQuestions.length) {
+                    loadQuestion();
+                } else {
+                    showResults();
+                }
+            });
+
+            function showResults() {
+                quizContent.classList.add("hidden");
+                quizResult.classList.remove("hidden");
+
+                document.getElementById("finalScore").textContent =
+                    `${score} / ${quizQuestions.length}`;
+
+                const percentage = (score / quizQuestions.length) * 100;
+
+                let message = "Keep practicing. You will improve!";
+                if (percentage === 100) message = "Excellent! Perfect score! 🎉";
+                else if (percentage >= 70) message = "Great job! Keep it up! 👏";
+                else if (percentage >= 50) message = "Good effort! Practice a little more. 💪";
+
+                document.getElementById("finalMessage").textContent = message;
+                quizProgress.style.width = "100%";
+            }
+
+            document.getElementById("restartQuiz").addEventListener("click", () => {
+                currentQuestion = 0;
+                score = 0;
+
+                quizResult.classList.add("hidden");
+                quizContent.classList.remove("hidden");
+
+                nextQuestion.textContent = "Next Question →";
+                loadQuestion();
+            });
+
+            loadQuestion();
+        </script>
+
+
+
+
+
+
+    </main>
+    <!-- NOTICE SECTION -->
+    <section class="notice-section" id="notice">
+        <div class="notice-container">
+
+            <div class="notice-heading">
+                <div>
+                    <span class="notice-subtitle">STAY UPDATED</span>
+                    <h2>Notice <span>Board</span></h2>
+                    <p>
+                        Stay informed about new lessons, study materials,
+                        quizzes and important announcements.
+                    </p>
+                </div>
+
+                <div class="notice-heading-icon">🔔</div>
+            </div>
+
+            <!-- FILTER BUTTONS -->
+            <div class="notice-filters">
+                <button class="notice-filter active" data-filter="all">
+                    All Notices
+                </button>
+                <button class="notice-filter" data-filter="important">
+                    Important
+                </button>
+                <button class="notice-filter" data-filter="lesson">
+                    New Lessons
+                </button>
+                <button class="notice-filter" data-filter="quiz">
+                    Quiz & Exam
+                </button>
+            </div>
+
+            <!-- NOTICE LIST -->
+            <div class="notice-list">
+
+                <article class="notice-item" data-category="important">
+                    <div class="notice-date">
+                        <strong>15</strong>
+                        <span>OCT</span>
+                    </div>
+
+                    <div class="notice-info">
+                        <span class="notice-badge important">Important</span>
+                        <h3>New Grammar Lesson Published</h3>
+                        <p>
+                            Tense-এর নতুন লেসন, সহজ ব্যাখ্যা ও উদাহরণ
+                            এখন ওয়েবসাইটে পাওয়া যাবে।
+                        </p>
+                        <button class="notice-read" data-title="New Grammar Lesson Published"
+                            data-details="Tense-এর নতুন লেসন, সহজ ব্যাখ্যা ও উদাহরণ এখন ওয়েবসাইটে পাওয়া যাবে।">
+                            Read Details →
+                        </button>
+                    </div>
+                </article>
+
+                <article class="notice-item" data-category="lesson">
+                    <div class="notice-date">
+                        <strong>12</strong>
+                        <span>OCT</span>
+                    </div>
+
+                    <div class="notice-info">
+                        <span class="notice-badge lesson">Study Material</span>
+                        <h3>Precis Writing Notes Available</h3>
+                        <p>
+                            Precis Writing-এর নিয়ম, নমুনা উত্তর ও
+                            প্র্যাকটিসের উপকরণ যোগ করা হয়েছে।
+                        </p>
+                        <button class="notice-read" data-title="Precis Writing Notes Available"
+                            data-details="Precis Writing-এর নিয়ম, নমুনা উত্তর ও প্র্যাকটিসের উপকরণ যোগ করা হয়েছে।">
+                            Read Details →
+                        </button>
+                    </div>
+                </article>
+
+                <article class="notice-item" data-category="quiz">
+                    <div class="notice-date">
+                        <strong>10</strong>
+                        <span>OCT</span>
+                    </div>
+
+                    <div class="notice-info">
+                        <span class="notice-badge quiz">Quiz & Exam</span>
+                        <h3>Weekly English Quiz</h3>
+                        <p>
+                            Grammar ও Writing বিষয়ে নিজের দক্ষতা
+                            যাচাই করতে কুইজে অংশ নাও।
+                        </p>
+                        <button class="notice-read" data-title="Weekly English Quiz"
+                            data-details="Grammar ও Writing বিষয়ে নিজের দক্ষতা যাচাই করতে কুইজে অংশ নাও।">
+                            Read Details →
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="notice-empty" hidden>
+                এই ক্যাটাগরিতে এখনো কোনো নোটিশ নেই।
+            </p>
+
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="em-about" id="about">
+        <div class="em-about-container">
+
+            <!-- LEFT: IMAGE -->
+            <div class="em-about-visual">
+                <!-- নিজের ছবি এখানে বসাবে -->
+                <img src="logo img/Earth 🌎.jpeg" alt="English learning and study" class="em-about-img" />
+
+                <div class="em-about-note">
+                    <span class="em-note-icon">✦</span>
+                    <div>
+                        <strong>Learn with Confidence</strong>
+                        <p>Learn Smart • Write Better</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: CONTENT -->
+            <div class="em-about-content">
+                <span class="em-about-label">ABOUT OUR PLATFORM</span>
+
+                <h2>
+                    Learn English the
+                    <span>Smarter Way.</span>
+                </h2>
+
+                <p class="em-about-description">
+                    Welcome to E.M English Master! Our goal is to make
+                    English Grammar and Writing easier for every learner
+                    through simple explanations, useful examples and
+                    practical exercises.
+                </p>
+
+                <p class="em-about-description">
+                    Whether you want to improve your grammar, practise
+                    Precis Writing, prepare for exams or build confidence
+                    in English, this platform is here to support your journey.
+                </p>
+
+                <!-- FEATURES -->
+                <div class="em-about-features">
+
+                    <div class="em-about-feature">
+                        <span class="em-check">✓</span>
+                        <div>
+                            <h3>Easy Bangla Explanation</h3>
+                            <p>Understand difficult topics step by step.</p>
+                        </div>
+                    </div>
+
+                    <div class="em-about-feature">
+                        <span class="em-check">✓</span>
+                        <div>
+                            <h3>Grammar & Writing Lessons</h3>
+                            <p>Learn rules with examples and model answers.</p>
+                        </div>
+                    </div>
+
+                    <div class="em-about-feature">
+                        <span class="em-check">✓</span>
+                        <div>
+                            <h3>Practice & Interactive Quiz</h3>
+                            <p>Test your knowledge and improve your skills.</p>
+                        </div>
+                    </div>
+
+                    <div class="em-about-feature">
+                        <span class="em-check">✓</span>
+                        <div>
+                            <h3>Learn at Your Own Pace</h3>
+                            <p>Study whenever and wherever you want.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <a href="#grammar" class="em-about-btn">
+                    Explore Lessons <span>→</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= FOOTER SECTION ================= -->
+    <footer class="em-footer" id="footer">
+
+        <div class="em-footer-container">
+
+            <!-- BRAND -->
+            <div class="em-footer-brand">
+
+                <a href="#home" class="em-footer-logo">
+                    <span class="em-logo-icon">🎓</span>
+
+                    <span class="em-logo-text">
+                        <strong>E.M English Master</strong>
+                        <small>LEARN SMART • WRITE BETTER</small>
+                    </span>
+                </a>
+
+                <p class="em-footer-description">
+                    Learn English with confidence. Improve your Grammar,
+                    Writing and communication skills with easy lessons,
+                    examples and interactive practice.
+                </p>
+
+                <!-- SOCIAL LINKS: Replace # with your real URLs -->
+                <div class="em-social-links">
+
+                    <a href="#" aria-label="Facebook" class="em-social facebook">f</a>
+
+                    <a href="#" aria-label="YouTube" class="em-social youtube">▶</a>
+
+                    <a href="#" aria-label="Instagram" class="em-social instagram">◎</a>
+
+                    <a href="mailto:your-email@example.com" aria-label="Email" class="em-social email">@</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+            <div class="em-footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#notice">Notice Board</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+
+            </div>
+
+
+            <!-- LEARNING -->
+            <div class="em-footer-column">
+
+                <h3>Learning Resources</h3>
+
+                <ul>
+                    <li><a href="#grammar">English Grammar</a></li>
+                    <li><a href="#writing">Writing Lessons</a></li>
+                    <li><a href="#practice">Practice & Quiz</a></li>
+                    <li><a href="#practice">Model Questions</a></li>
+                </ul>
+
+            </div>
+
+
+            <!-- CONTACT -->
+            <div class="em-footer-column em-footer-contact" id="contact">
+
+                <h3>Get In Touch</h3>
+
+                <p>
+                    Have a question or suggestion?
+                    We'd love to hear from you.
+                </p>
+
+                <a href="mailto:your-email@example.com" class="em-contact-link">
+                    <span>✉</span>
+                    your-email@example.com
+                </a>
+
+                <a href="#home" class="em-back-top">
+                    Back to Top ↑
+                </a>
+
+            </div>
+
         </div>
 
-        <div>
-          <h1 class="text-base font-bold leading-tight sm:text-lg">
-            <span class="text-amber-400">E.M</span> English Master
-          </h1>
-          <p class="hidden text-[10px] tracking-wide text-slate-300 sm:block">
-            LEARN SMART • WRITE BETTER
-          </p>
+
+        <!-- FOOTER BOTTOM -->
+        <div class="em-footer-bottom">
+
+            <p>
+                © <span id="emCopyrightYear">2026</span>
+                E.M English Master. All rights reserved.
+            </p>
+
+            <div class="em-footer-legal">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms & Conditions</a>
+            </div>
+
         </div>
-      </a>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden items-center gap-5 lg:flex">
-        <a href="#home" class="nav-link text-sm font-medium text-amber-400">Home</a>
-        <a href="#grammar" class="nav-link text-sm transition hover:text-amber-400">Grammar</a>
-        <a href="#writing" class="nav-link text-sm transition hover:text-amber-400">Writing</a>
-        <a href="#practice" class="nav-link text-sm transition hover:text-amber-400">Practice &amp; Quiz</a>
-        <a href="#notice" class="nav-link text-sm transition hover:text-amber-400">Notice</a>
-        <a href="#about" class="nav-link text-sm transition hover:text-amber-400">About</a>
-      </div>
+    </footer>
+    ```
 
-      <!-- Search + Login + Mobile Button -->
-      <div class="flex items-center gap-2">
 
-        <form id="searchForm" class="hidden items-center rounded-full border border-slate-600 px-3 py-2 md:flex">
-          <input
-            id="searchInput"
-            type="search"
-            placeholder="Search lessons..."
-            aria-label="Search lessons"
-            class="w-28 bg-transparent text-sm text-white outline-none placeholder:text-slate-400 focus:w-40"
-          />
-          <button type="submit" aria-label="Search" class="text-amber-400">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="7" />
-              <path stroke-linecap="round" d="m16 16 4 4" />
-            </svg>
-          </button>
-        </form>
 
-        <a
-          href="#login"
-          class="hidden rounded-full bg-amber-400 px-5 py-2 text-sm font-bold text-[#0b1730] transition hover:bg-amber-300 sm:inline-flex"
-        >
-          Login
-        </a>
+    <script>
+        const menuButton = document.getElementById("menuButton");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuIcon = document.getElementById("menuIcon");
 
-        <button
-          id="menuButton"
-          type="button"
-          aria-label="Open navigation menu"
-          aria-controls="mobileMenu"
-          aria-expanded="false"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-600 transition hover:bg-slate-800 lg:hidden"
-        >
-          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </nav>
+        function closeMenu() {
+            mobileMenu.classList.add("hidden");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
 
-    <!-- Mobile Navigation -->
-    <div id="mobileMenu" class="hidden border-t border-slate-700 bg-[#0b1730] px-4 pb-5 pt-3 lg:hidden">
-      <form id="mobileSearchForm" class="mb-3 flex gap-2">
-        <input
-          id="mobileSearchInput"
-          type="search"
-          placeholder="Search lessons..."
-          aria-label="Search lessons"
-          class="min-w-0 flex-1 rounded-lg border border-slate-600 bg-slate-800 px-3 py-2 text-sm text-white outline-none focus:border-amber-400"
-        />
-        <button type="submit" class="rounded-lg bg-amber-400 px-4 font-semibold text-[#0b1730]">
-          Search
-        </button>
-      </form>
+            menuIcon.innerHTML =
+                '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
+        }
 
-      <div class="flex flex-col">
-        <a href="#home" class="mobile-link rounded-lg px-3 py-3 font-medium text-amber-400 hover:bg-slate-800">Home</a>
-        <a href="#grammar" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Grammar</a>
-        <a href="#writing" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Writing</a>
-        <a href="#practice" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Practice &amp; Quiz</a>
-        <a href="#notice" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">Notice</a>
-        <a href="#about" class="mobile-link rounded-lg px-3 py-3 hover:bg-slate-800">About</a>
-        <a href="#login" class="mobile-link mt-2 rounded-lg bg-amber-400 px-3 py-3 text-center font-bold text-[#0b1730] hover:bg-amber-300">Login</a>
-      </div>
-    </div>
-  </header>
+        menuButton.addEventListener("click", () => {
+            const isOpen = !mobileMenu.classList.contains("hidden");
 
-  
+            if (isOpen) {
+                closeMenu();
+            } else {
+                mobileMenu.classList.remove("hidden");
+                menuButton.setAttribute("aria-expanded", "true");
+                menuButton.setAttribute("aria-label", "Close navigation menu");
 
-  
-  <script>
-    const menuButton = document.getElementById("menuButton");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const menuIcon = document.getElementById("menuIcon");
+                menuIcon.innerHTML =
+                    '<path stroke-linecap="round" stroke-linejoin="round" d="m6 6 12 12M18 6 6 18" />';
+            }
+        });
 
-    function closeMenu() {
-      mobileMenu.classList.add("hidden");
-      menuButton.setAttribute("aria-expanded", "false");
-      menuButton.setAttribute("aria-label", "Open navigation menu");
+        document.querySelectorAll(".mobile-link").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+        });
 
-      menuIcon.innerHTML =
-        '<path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />';
-    }
+        function handleSearch(event, inputId) {
+            event.preventDefault();
 
-    menuButton.addEventListener("click", () => {
-      const isOpen = !mobileMenu.classList.contains("hidden");
+            const query = document.getElementById(inputId).value.trim();
 
-      if (isOpen) {
-        closeMenu();
-      } else {
-        mobileMenu.classList.remove("hidden");
-        menuButton.setAttribute("aria-expanded", "true");
-        menuButton.setAttribute("aria-label", "Close navigation menu");
+            if (!query) {
+                document.getElementById(inputId).focus();
+                return;
+            }
 
-        menuIcon.innerHTML =
-          '<path stroke-linecap="round" stroke-linejoin="round" d="m6 6 12 12M18 6 6 18" />';
-      }
-    });
+            // Demo search: replace with actual lesson search later.
+            alert("Search for: " + query + "\nConnect this form to your lesson search feature.");
+        }
 
-    document.querySelectorAll(".mobile-link").forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
+        document.getElementById("searchForm").addEventListener("submit", (event) => {
+            handleSearch(event, "searchInput");
+        });
 
-    function handleSearch(event, inputId) {
-      event.preventDefault();
+        document.getElementById("mobileSearchForm").addEventListener("submit", (event) => {
+            handleSearch(event, "mobileSearchInput");
+        });
 
-      const query = document.getElementById(inputId).value.trim();
-
-      if (!query) {
-        document.getElementById(inputId).focus();
-        return;
-      }
-
-      // Demo search: replace with actual lesson search later.
-      alert("Search for: " + query + "\nConnect this form to your lesson search feature.");
-    }
-
-    document.getElementById("searchForm").addEventListener("submit", (event) => {
-      handleSearch(event, "searchInput");
-    });
-
-    document.getElementById("mobileSearchForm").addEventListener("submit", (event) => {
-      handleSearch(event, "mobileSearchInput");
-    });
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
 </body>
+
 </html>
