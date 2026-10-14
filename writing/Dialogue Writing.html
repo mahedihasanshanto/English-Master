@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Easy Writing | E.M English Master</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Header -->
+  <header class="bg-blue-950 text-white px-5 py-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-2xl font-bold text-amber-400">
+        E.M English Master
+      </h1>
+      <p class="text-sm mt-2 text-slate-300">
+        Learn Smart • Write Better • Score Higher
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="max-w-6xl mx-auto px-5 py-10">
+
+    <a href="../index.html"
+       class="text-blue-800 hover:underline">
+      ← Back to Home
+    </a>
+
+    <h2 class="text-3xl font-bold mt-5">
+      Easy Writing
+    </h2>
+
+    <p class="text-slate-500 mt-2 mb-6">
+      Learn important English paragraphs with easy language.
+    </p>
+
+    <!-- Search -->
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search your writing..."
+      class="w-full border border-slate-300 bg-white rounded-xl p-3 mb-6 outline-none focus:ring-2 focus:ring-amber-400"
+    >
+
+    <!-- Writing List -->
+    <div id="writingList"
+         class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    </div>
+
+  </main>
+
+  <footer class="bg-blue-950 text-white text-center p-5">
+    <p>© 2026 E.M English Master. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // All writings are stored in this one file.
+
+    const writings = [
+      {
+        id: 1,
+        title: "Tree Plantation",
+        category: "Environment",
+        description: "An easy paragraph about planting trees.",
+        content: `Tree plantation means planting trees in large numbers.
+Trees are very important for our life and environment.
+They give us oxygen, fruits, wood and shade.
+Trees help us maintain the balance of nature.
+They prevent soil erosion and reduce air pollution.
+But people are cutting down trees for different purposes.
+This is harmful to our environment.
+We should plant more trees every year.
+The government and the people should work together.
+Tree plantation can make our country green and beautiful.
+So, we should all take part in tree plantation.`
+      },
+
+      {
+        id: 2,
+        title: "Student Life",
+        category: "Education",
+        description: "An easy paragraph about student life.",
+        content: `Student life is the most important period of life.
+It is the time to gain knowledge and build character.
+A student has many duties and responsibilities.
+Students should attend classes regularly and study attentively.
+They should respect their teachers and parents.
+They should also take part in games and sports.
+A good student is honest, punctual and hardworking.
+Student life prepares us for the future.
+We should make proper use of this valuable time.
+A successful student can become a good citizen.`
+      },
+
+      {
+        id: 3,
+        title: "Traffic Jam",
+        category: "Society",
+        description: "An easy paragraph about traffic congestion.",
+        content: `Traffic jam is a common problem in big cities.
+It occurs when too many vehicles crowd the roads.
+It wastes our valuable time and causes suffering.
+Students and office workers often arrive late.
+The main causes are narrow roads and too many vehicles.
+Illegal parking also creates traffic congestion.
+Traffic jam causes noise and air pollution.
+We should follow traffic rules properly.
+The government should improve roads and traffic management.
+Thus, we can reduce traffic jam in our country.`
+      },
+
+      {
+        id: 4,
+        title: "Physical Exercise",
+        category: "Health",
+        description: "An easy paragraph about physical exercise.",
+        content: `Physical exercise is essential for good health.
+It keeps our body fit and our mind fresh.
+Walking, running, swimming and playing are forms of exercise.
+Regular exercise makes our muscles strong.
+It helps prevent many health problems.
+It also reduces stress and improves sleep.
+We should exercise regularly according to our ability.
+We should also eat healthy food and drink enough water.
+Students should make exercise a part of daily life.
+Physical exercise helps us lead a healthy life.`
+      },
+
+      {
+        id: 5,
+        title: "Internet",
+        category: "Technology",
+        description: "An easy paragraph about the internet.",
+        content: `The internet is a wonderful invention of modern science.
+It connects people all over the world.
+We can use it to learn, communicate and share information.
+Students can attend online classes and read educational materials.
+People can also do business through the internet.
+However, excessive use of the internet wastes time.
+False information and online fraud are also serious problems.
+We should use the internet carefully and responsibly.
+It can be very useful when used properly.
+The internet has become an important part of modern life.`
+      },
+
+      {
+        id: 6,
+        title: "Environment Pollution",
+        category: "Environment",
+        description: "An easy paragraph about environmental pollution.",
+        content: `Environment pollution is a serious problem in the world.
+Air, water and soil are polluted in different ways.
+Smoke from vehicles and factories pollutes the air.
+Waste and chemicals pollute rivers and other water sources.
+Plastic waste also harms the environment.
+Pollution affects human health and wildlife.
+We should keep our surroundings clean.
+Factories should manage their waste properly.
+People should reduce plastic use and plant more trees.
+Everyone should work together to protect the environment.`
+      }
+    ];
+
+    const writingList = document.getElementById("writingList");
+    const searchInput = document.getElementById("searchInput");
+
+    function displayWritings(items) {
+      if (items.length === 0) {
+        writingList.innerHTML = `
+          <p class="text-slate-500">
+            No writing found. Try another search.
+          </p>`;
+        return;
+      }
+
+      writingList.innerHTML = items.map(item => `
+        <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+
+          <span class="text-sm text-amber-600 font-semibold">
+            ${item.category}
+          </span>
+
+          <h3 class="text-xl font-bold mt-3">
+            ${item.title}
+          </h3>
+
+          <p class="text-slate-500 text-sm mt-2">
+            ${item.description}
+          </p>
+
+          <button
+            onclick="readWriting(${item.id})"
+            class="mt-5 bg-blue-950 text-white px-4 py-2 rounded-lg hover:bg-blue-800">
+            Read More →
+          </button>
+
+        </article>
+      `).join("");
+    }
+
+    function readWriting(id) {
+      const item = writings.find(writing => writing.id === id);
+
+      if (!item) return;
+
+      writingList.innerHTML = `
+        <article class="bg-white border rounded-2xl p-6 sm:p-8 shadow-sm col-span-full">
+
+          <button
+            onclick="displayWritings(filteredWritings())"
+            class="text-blue-800 hover:underline mb-6">
+            ← Back to Writing List
+          </button>
+
+          <p class="text-amber-600 font-semibold">
+            ${item.category}
+          </p>
+
+          <h2 class="text-3xl font-bold mt-2 mb-6">
+            ${item.title}
+          </h2>
+
+          <div class="leading-8 whitespace-pre-line text-lg">
+            ${item.content}
+          </div>
+
+          <button
+            onclick="copyWriting(${item.id})"
+            class="mt-7 bg-amber-500 text-blue-950 font-semibold px-5 py-3 rounded-lg hover:bg-amber-400">
+            Copy Writing
+          </button>
+
+        </article>
+      `;
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function filteredWritings() {
+      const keyword = searchInput.value.toLowerCase().trim();
+
+      return writings.filter(item =>
+        item.title.toLowerCase().includes(keyword) ||
+        item.category.toLowerCase().includes(keyword)
+      );
+    }
+
+    function copyWriting(id) {
+      const item = writings.find(writing => writing.id === id);
+
+      if (!item) return;
+
+      navigator.clipboard.writeText(item.title + "\n\n" + item.content)
+        .then(() => alert("Writing copied successfully!"))
+        .catch(() => alert("Copy failed. Please try again."));
+    }
+
+    searchInput.addEventListener("input", () => {
+      displayWritings(filteredWritings());
+    });
+
+    displayWritings(writings);
+  </script>
+
+</body>
+</html>
