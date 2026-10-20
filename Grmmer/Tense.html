@@ -1,0 +1,497 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grammar | E.M English Master</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Header -->
+  <header class="bg-blue-950 text-white px-5 py-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-2xl font-bold text-amber-400">
+        E.M English Master
+      </h1>
+      <p class="text-sm mt-2 text-slate-300">
+        Learn Smart • Write Better • Score Higher
+      </p>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <main class="max-w-6xl mx-auto px-5 py-10">
+
+    <a href="index.html" class="text-blue-800 hover:underline">
+      ← Back to Home
+    </a>
+
+    <h2 class="text-3xl font-bold mt-5">
+      English Grammar
+    </h2>
+
+    <p class="text-slate-500 mt-2 mb-6">
+      Learn English grammar step by step with easy rules,
+      Bengali explanations and practical examples.
+    </p>
+
+    <!-- Search -->
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search Tense, Noun, Voice, Narration..."
+      class="w-full border border-slate-300 bg-white rounded-xl p-3 mb-5 outline-none focus:ring-2 focus:ring-amber-400"
+    >
+
+    <!-- Category Filters -->
+    <div class="flex flex-wrap gap-3 mb-7">
+      <button data-filter="all"
+        class="grammar-filter rounded-full bg-blue-950 text-white px-5 py-2">
+        All Topics
+      </button>
+
+      <button data-filter="basic"
+        class="grammar-filter rounded-full border bg-white px-5 py-2">
+        Basic
+      </button>
+
+      <button data-filter="intermediate"
+        class="grammar-filter rounded-full border bg-white px-5 py-2">
+        Intermediate
+      </button>
+    </div>
+
+    <!-- Grammar List -->
+    <div id="grammarList"
+      class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    </div>
+
+    <!-- No Results -->
+    <p id="emptyMessage" class="hidden text-slate-500 py-10">
+      No grammar topics found. Try another search.
+    </p>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-950 text-white text-center p-5">
+    <p>© 2026 E.M English Master. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // All grammar lessons are stored in this one file.
+
+    const grammarLessons = [
+      {
+        id: 1,
+        title: "Tense",
+        category: "basic",
+        icon: "⏰",
+        description: "Learn Present, Past and Future Tense.",
+        content: `Tense tells us the time of an action.
+
+বাংলা: Tense দিয়ে কোনো কাজ কখন ঘটে, ঘটেছে বা ঘটবে তা বোঝায়।
+
+There are three main types of tense:
+
+1. Present Tense
+It describes an action happening now or a regular action.
+Example: I play football.
+
+2. Past Tense
+It describes an action that happened in the past.
+Example: I played football yesterday.
+
+3. Future Tense
+It describes an action that will happen in the future.
+Example: I will play football tomorrow.
+
+Remember:
+Present = বর্তমান
+Past = অতীত
+Future = ভবিষ্যৎ`
+      },
+
+      {
+        id: 2,
+        title: "Parts of Speech",
+        category: "basic",
+        icon: "📚",
+        description: "Learn the eight main parts of speech.",
+        content: `Parts of Speech are categories of words according to their functions.
+
+বাংলা: বাক্যে শব্দের কাজ অনুযায়ী শব্দগুলোকে বিভিন্ন ভাগে ভাগ করা হয়।
+
+The eight main parts of speech are:
+
+1. Noun: Names a person, place or thing.
+Example: Rahim, Dhaka, Book.
+
+2. Pronoun: Used instead of a noun.
+Example: He, She, They.
+
+3. Verb: Expresses an action or state.
+Example: Go, Eat, Write.
+
+4. Adjective: Describes a noun.
+Example: Beautiful, Good, Tall.
+
+5. Adverb: Modifies a verb, adjective or another adverb.
+Example: Slowly, Quickly.
+
+6. Preposition: Shows a relationship.
+Example: In, On, At.
+
+7. Conjunction: Joins words or sentences.
+Example: And, But, Because.
+
+8. Interjection: Expresses sudden emotion.
+Example: Wow! Alas! Hurrah!`
+      },
+
+      {
+        id: 3,
+        title: "Sentence Structure",
+        category: "basic",
+        icon: "📝",
+        description: "Understand Subject, Verb and Object.",
+        content: `A sentence is a group of words that expresses a complete thought.
+
+বাংলা: যে শব্দসমষ্টি সম্পূর্ণ অর্থ প্রকাশ করে তাকে Sentence বলে।
+
+Basic sentence structure:
+
+Subject + Verb + Object
+
+Example: I read a book.
+
+I = Subject
+read = Verb
+a book = Object
+
+More examples:
+
+1. She sings a song.
+2. They play football.
+3. Rahim eats rice.
+
+Remember: Every complete sentence should express a clear meaning.`
+      },
+
+      {
+        id: 4,
+        title: "Voice Change",
+        category: "intermediate",
+        icon: "🔄",
+        description: "Learn Active and Passive Voice.",
+        content: `Voice shows whether the subject performs or receives an action.
+
+বাংলা: Subject কাজটি নিজে করছে, নাকি তার ওপর কাজটি করা হচ্ছে, তা Voice দিয়ে বোঝায়।
+
+Active Voice:
+The subject performs the action.
+Example: Rahim writes a letter.
+
+Passive Voice:
+The subject receives the action.
+Example: A letter is written by Rahim.
+
+Basic pattern:
+
+Active: Subject + Verb + Object
+
+Passive: Object + appropriate be verb + V3 + by + Subject
+
+Remember:
+The passive form depends on the tense and the verb. Not every sentence can naturally be changed into passive voice.`
+      },
+
+      {
+        id: 5,
+        title: "Narration",
+        category: "intermediate",
+        icon: "💬",
+        description: "Learn Direct and Indirect Speech.",
+        content: `Narration is the way we report someone's words.
+
+বাংলা: কারও বক্তব্য সরাসরি বা পরোক্ষভাবে প্রকাশ করাকে Narration বলে।
+
+Direct Speech:
+He said, "I am happy."
+
+Indirect Speech:
+He said that he was happy.
+
+Another example:
+
+Direct: She said, "I like tea."
+
+Indirect: She said that she liked tea.
+
+Important:
+When changing direct speech into indirect speech, pronouns, tense and time expressions may change according to the context.
+
+Example:
+today may change to that day.
+tomorrow may change to the next day.
+
+These changes depend on the reporting situation.`
+      },
+
+      {
+        id: 6,
+        title: "Articles",
+        category: "basic",
+        icon: "📖",
+        description: "Understand A, An and The.",
+        content: `There are three English articles: A, An and The.
+
+বাংলা: Noun-এর আগে Article ব্যবহার করা হয়।
+
+1. A
+Use before a singular countable noun beginning with a consonant sound.
+Example: a book, a university.
+
+2. An
+Use before a singular countable noun beginning with a vowel sound.
+Example: an apple, an hour.
+
+3. The
+Use for a specific person or thing, or where the context identifies it.
+Example: The book on the table is mine.
+
+Remember:
+Use A or An according to the sound, not simply the first letter.`
+      },
+
+      {
+        id: 7,
+        title: "Prepositions",
+        category: "basic",
+        icon: "📍",
+        description: "Learn In, On, At and other prepositions.",
+        content: `A preposition shows the relationship between a noun or pronoun and another word.
+
+বাংলা: বাক্যে স্থান, সময় বা সম্পর্ক বোঝাতে Preposition ব্যবহৃত হয়।
+
+Examples of place:
+
+The book is on the table.
+The cat is under the chair.
+He is in the room.
+
+Examples of time:
+
+I wake up at 6 o'clock.
+My birthday is in April.
+The exam is on Monday.
+
+Common prepositions:
+In, On, At, Under, Over, Between, Beside, Behind.
+
+Remember:
+Preposition usage depends on context. Learn them with examples.`
+      },
+
+      {
+        id: 8,
+        title: "Right Form of Verbs",
+        category: "intermediate",
+        icon: "✍️",
+        description: "Learn how to use verbs correctly.",
+        content: `Right Form of Verbs means using the correct form of a verb according to the sentence.
+
+বাংলা: বাক্যের Tense, Subject এবং structure অনুযায়ী Verb-এর সঠিক রূপ ব্যবহার করতে হয়।
+
+Examples:
+
+1. He goes to school every day.
+2. They play football.
+3. She is reading a book.
+4. I went to the market yesterday.
+5. He has finished his work.
+
+Important:
+He, She and It usually take an -s or -es ending in the Present Simple tense.
+
+Example:
+He plays.
+She watches.
+
+After has, have or had, the past participle (V3) is used in perfect tenses.`
+      },
+
+      {
+        id: 9,
+        title: "Transformation of Sentences",
+        category: "intermediate",
+        icon: "🔀",
+        description: "Practice changing sentence structures.",
+        content: `Transformation of Sentences means changing the structure of a sentence without changing its essential meaning.
+
+বাংলা: মূল অর্থ ঠিক রেখে বাক্যের গঠন পরিবর্তন করাকে Transformation বলে।
+
+Examples:
+
+1. Affirmative:
+He is honest.
+
+Negative with similar meaning:
+He is not dishonest.
+
+2. Exclamatory:
+What a beautiful flower it is!
+
+Assertive:
+It is a very beautiful flower.
+
+3. Simple:
+In spite of being poor, he is honest.
+
+Complex:
+Though he is poor, he is honest.
+
+Remember:
+The correct transformation depends on the sentence structure and intended meaning.`
+      }
+    ];
+
+    const grammarList = document.getElementById("grammarList");
+    const searchInput = document.getElementById("searchInput");
+    const filterButtons = document.querySelectorAll(".grammar-filter");
+    const emptyMessage = document.getElementById("emptyMessage");
+
+    let activeFilter = "all";
+
+    function filteredLessons() {
+      const keyword = searchInput.value.toLowerCase().trim();
+
+      return grammarLessons.filter(lesson => {
+        const matchesSearch =
+          lesson.title.toLowerCase().includes(keyword) ||
+          lesson.description.toLowerCase().includes(keyword) ||
+          lesson.content.toLowerCase().includes(keyword);
+
+        const matchesCategory =
+          activeFilter === "all" ||
+          lesson.category === activeFilter;
+
+        return matchesSearch && matchesCategory;
+      });
+    }
+
+    function displayLessons(items) {
+      if (items.length === 0) {
+        grammarList.innerHTML = "";
+        emptyMessage.classList.remove("hidden");
+        return;
+      }
+
+      emptyMessage.classList.add("hidden");
+
+      grammarList.innerHTML = items.map(lesson => `
+        <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition">
+
+          <div class="flex items-start justify-between">
+            <div class="text-3xl">${lesson.icon}</div>
+
+            <span class="rounded-full px-3 py-1 text-xs font-bold
+              ${lesson.category === "basic"
+                ? "bg-green-100 text-green-700"
+                : "bg-yellow-100 text-yellow-700"}">
+              ${lesson.category === "basic" ? "Basic" : "Intermediate"}
+            </span>
+          </div>
+
+          <h3 class="text-xl font-bold mt-4">${lesson.title}</h3>
+
+          <p class="text-slate-500 text-sm mt-2 leading-6">
+            ${lesson.description}
+          </p>
+
+          <button
+            onclick="readLesson(${lesson.id})"
+            class="mt-5 bg-blue-950 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition">
+            Read More →
+          </button>
+
+        </article>
+      `).join("");
+    }
+
+    function readLesson(id) {
+      const lesson = grammarLessons.find(item => item.id === id);
+      if (!lesson) return;
+
+      grammarList.innerHTML = `
+        <article class="bg-white border rounded-2xl p-6 sm:p-8 shadow-sm col-span-full">
+
+          <button
+            onclick="displayLessons(filteredLessons())"
+            class="text-blue-800 hover:underline mb-6">
+            ← Back to Grammar Topics
+          </button>
+
+          <div class="flex flex-wrap items-center gap-3 mb-3">
+            <span class="text-3xl">${lesson.icon}</span>
+            <span class="text-amber-600 font-semibold">
+              ${lesson.category === "basic" ? "Basic Grammar" : "Intermediate Grammar"}
+            </span>
+          </div>
+
+          <h2 class="text-3xl font-bold mb-6">${lesson.title}</h2>
+
+          <div class="leading-8 whitespace-pre-line text-base sm:text-lg">
+            ${lesson.content}
+          </div>
+
+          <button
+            onclick="copyLesson(${lesson.id})"
+            class="mt-7 bg-amber-500 text-blue-950 font-semibold px-5 py-3 rounded-lg hover:bg-amber-400">
+            Copy Lesson
+          </button>
+
+        </article>
+      `;
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function copyLesson(id) {
+      const lesson = grammarLessons.find(item => item.id === id);
+      if (!lesson) return;
+
+      navigator.clipboard.writeText(lesson.title + "\n\n" + lesson.content)
+        .then(() => alert("Lesson copied successfully!"))
+        .catch(() => alert("Copy failed. Please try again."));
+    }
+
+    searchInput.addEventListener("input", () => {
+      displayLessons(filteredLessons());
+    });
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+
+        filterButtons.forEach(filterButton => {
+          filterButton.classList.remove("bg-blue-950", "text-white");
+          filterButton.classList.add("border", "bg-white");
+        });
+
+        button.classList.add("bg-blue-950", "text-white");
+        button.classList.remove("border", "bg-white");
+
+        displayLessons(filteredLessons());
+      });
+    });
+
+    displayLessons(grammarLessons);
+  </script>
+
+</body>
+</html>

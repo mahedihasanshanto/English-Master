@@ -1,0 +1,124 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E.M English Master | Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-100 flex items-center justify-center p-4">
+
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
+
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-slate-900">
+        E.M <span class="text-amber-500">English Master</span>
+      </h1>
+      <p class="text-gray-500 mt-2">Welcome back! Please login.</p>
+    </div>
+
+    <form id="loginForm" class="space-y-5">
+
+      <div>
+        <label for="email" class="block mb-2 font-medium text-gray-700">
+          Email Address
+        </label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+          class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-amber-500"
+        >
+      </div>
+
+      <div>
+        <label for="password" class="block mb-2 font-medium text-gray-700">
+          Password
+        </label>
+
+        <div class="relative">
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 pr-20 outline-none focus:border-amber-500"
+          >
+
+          <button
+            type="button"
+            id="togglePassword"
+            class="absolute right-3 top-3 text-sm text-amber-600 font-semibold"
+          >
+            Show
+          </button>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center gap-2 text-gray-600">
+          <input type="checkbox" id="remember">
+          Remember me
+        </label>
+
+        <a href="#" id="forgotLink"
+           class="text-amber-600 hover:underline">
+          Forgot password?
+        </a>
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-slate-900 text-white py-3 rounded-lg font-semibold hover:bg-amber-500 hover:text-slate-900 transition"
+      >
+        Login
+      </button>
+
+      <p id="message" class="text-center text-sm" aria-live="polite"></p>
+
+    </form>
+
+    <p class="text-center text-gray-600 mt-6 text-sm">
+      Don't have an account?
+      <a href="signup.html" class="text-amber-600 font-semibold hover:underline">
+        Sign Up
+      </a>
+    </p>
+
+  </div>
+
+  <script>
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+    const loginForm = document.getElementById("loginForm");
+    const message = document.getElementById("message");
+
+    togglePassword.addEventListener("click", () => {
+      const isHidden = passwordInput.type === "password";
+
+      passwordInput.type = isHidden ? "text" : "password";
+      togglePassword.textContent = isHidden ? "Hide" : "Show";
+    });
+
+    loginForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      message.className = "text-center text-sm text-red-600";
+      message.textContent =
+        "Login form ready. Connect an authentication system to verify your account.";
+    });
+
+    document.getElementById("forgotLink").addEventListener("click", (event) => {
+      event.preventDefault();
+      message.className = "text-center text-sm text-amber-600";
+      message.textContent =
+        "Password reset requires a connected authentication system.";
+    });
+  </script>
+
+</body>
+</html>

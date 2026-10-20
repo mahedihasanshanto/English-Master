@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice & Quiz | E.M English Master</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#102A43",
+            gold: "#F5B700"
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    [hidden] { display: none !important; }
+    html { scroll-behavior: smooth; }
+    .option.correct { background: #dcfce7; border-color: #16a34a; }
+    .option.wrong { background: #fee2e2; border-color: #dc2626; }
+  </style>
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-800">
+
+  <!-- Header -->
+  <header class="bg-white border-b sticky top-0 z-20">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="../index.html" class="font-black text-xl text-navy">
+        E.M <span class="text-amber-500">English Master</span>
+      </a>
+      <a href="../index.html" class="text-sm font-semibold hover:text-amber-600">
+        ← Home
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8 sm:py-12">
+
+    <!-- Hero -->
+    <section class="bg-navy text-white rounded-3xl p-6 sm:p-10">
+      <p class="text-gold font-bold uppercase tracking-widest text-sm">
+        Practice • Improve • Succeed
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-black mt-3">
+        Practice & <span class="text-gold">Quiz</span>
+      </h1>
+      <p class="mt-4 max-w-2xl text-slate-200 leading-7">
+        Improve your English grammar, vocabulary and writing skills
+        through interactive quizzes.
+      </p>
+    </section>
+
+    <!-- Categories -->
+    <section class="mt-10">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-navy">
+        Choose Your Quiz
+      </h2>
+      <p class="text-slate-500 mt-2">Each quiz contains 10 questions.</p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+        <button data-category="grammar"
+          class="category border-2 border-navy bg-white rounded-2xl p-5 text-left hover:shadow-lg">
+          <span class="text-3xl">📘</span>
+          <h3 class="font-extrabold text-lg mt-3">Grammar Quiz</h3>
+          <p class="text-sm text-slate-500 mt-2">Tense, articles, verbs and prepositions.</p>
+        </button>
+
+        <button data-category="vocabulary"
+          class="category border-2 border-transparent bg-white rounded-2xl p-5 text-left hover:shadow-lg">
+          <span class="text-3xl">📚</span>
+          <h3 class="font-extrabold text-lg mt-3">Vocabulary Quiz</h3>
+          <p class="text-sm text-slate-500 mt-2">Synonyms, antonyms and word meanings.</p>
+        </button>
+
+        <button data-category="writing"
+          class="category border-2 border-transparent bg-white rounded-2xl p-5 text-left hover:shadow-lg">
+          <span class="text-3xl">✍️</span>
+          <h3 class="font-extrabold text-lg mt-3">Writing Practice</h3>
+          <p class="text-sm text-slate-500 mt-2">Sentences, punctuation and formal writing.</p>
+        </button>
+
+        <button data-category="mixed"
+          class="category border-2 border-transparent bg-white rounded-2xl p-5 text-left hover:shadow-lg">
+          <span class="text-3xl">🎯</span>
+          <h3 class="font-extrabold text-lg mt-3">Mixed Quiz</h3>
+          <p class="text-sm text-slate-500 mt-2">Practice all your English skills.</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quizSection" class="mt-10 bg-white rounded-3xl border p-5 sm:p-8 shadow-sm">
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+        <div>
+          <p class="text-amber-600 font-bold text-sm uppercase">Your challenge</p>
+          <h2 id="quizTitle" class="text-2xl font-extrabold text-navy mt-1">
+            Grammar Quiz
+          </h2>
+        </div>
+        <div class="sm:w-56">
+          <div class="flex justify-between text-sm text-slate-500">
+            <span>Progress</span>
+            <span id="progressText">0 / 10 answered</span>
+          </div>
+          <div class="h-2 bg-slate-200 rounded-full mt-2 overflow-hidden">
+            <div id="progressBar" class="h-full bg-gold" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <form id="quizForm" class="mt-8">
+        <div id="questions" class="space-y-6"></div>
+
+        <p id="message" class="text-red-600 text-sm mt-4" role="status"></p>
+
+        <div class="mt-8 pt-6 border-t flex flex-col-reverse sm:flex-row gap-3 sm:justify-between">
+          <button type="button" id="restart"
+            class="border rounded-xl px-5 py-3 font-bold hover:bg-slate-100">
+            Restart Quiz
+          </button>
+          <button type="submit" id="submit"
+            class="bg-navy text-white rounded-xl px-6 py-3 font-bold hover:bg-slate-800">
+            Submit Answers
+          </button>
+        </div>
+      </form>
+
+      <!-- Results -->
+      <section id="results" hidden class="mt-8 border-t pt-8">
+        <div class="bg-navy text-white rounded-2xl p-6">
+          <p class="text-slate-300">Your Final Score</p>
+          <h3 id="score" class="text-4xl font-black mt-2">0 / 10</h3>
+          <p id="feedback" class="mt-3"></p>
+          <button id="tryAgain"
+            class="mt-5 bg-gold text-navy font-bold px-5 py-3 rounded-xl">
+            Try Again
+          </button>
+        </div>
+
+        <h3 class="text-xl font-extrabold text-navy mt-8">Answer Review</h3>
+        <div id="review" class="mt-4 space-y-4"></div>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="mt-12 bg-white border-t">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-slate-500">
+      <strong class="text-navy">E.M English Master</strong>
+      — Learn Smart • Write Better • Score Higher.
+    </div>
+  </footer>
+
+  <script>
+    // All questions are stored here.
+    const quizData = {
+      grammar: [
+        { q: "She _____ to school every day.", o: ["go", "goes", "going", "gone"], a: 1, e: "Use goes with she in the simple present." },
+        { q: "They _____ football yesterday.", o: ["play", "plays", "played", "playing"], a: 2, e: "Yesterday indicates the past: played." },
+        { q: "He is _____ honest man.", o: ["a", "an", "the", "no article"], a: 1, e: "Honest begins with a vowel sound, so use an." },
+        { q: "I have lived here _____ 2020.", o: ["for", "since", "from", "by"], a: 1, e: "Use since with a starting point in time." },
+        { q: "What is the past participle of write?", o: ["wrote", "written", "writing", "writes"], a: 1, e: "Write, wrote, written." },
+        { q: "Choose the adjective: a beautiful flower.", o: ["a", "beautiful", "flower", "is"], a: 1, e: "Beautiful describes the noun flower." },
+        { q: "He is interested _____ music.", o: ["on", "at", "in", "for"], a: 2, e: "The correct phrase is interested in." },
+        { q: "They _____ cars here. (passive)", o: ["make", "are made", "are making", "made"], a: 1, e: "Present simple passive uses are + past participle." },
+        { q: "What is the plural of child?", o: ["childs", "childes", "children", "childrens"], a: 2, e: "The plural of child is children." },
+        { q: "Choose the correct sentence.", o: ["Where are you going.", "Where are you going?", "where are you going?", "Where you are going?"], a: 1, e: "A direct question ends with a question mark." }
+      ],
+
+      vocabulary: [
+        { q: "What does honest mean?", o: ["Truthful", "Angry", "Lazy", "Careless"], a: 0, e: "Honest means truthful." },
+        { q: "A synonym of begin is _____.", o: ["Finish", "Start", "Close", "Forget"], a: 1, e: "Begin and start have similar meanings." },
+        { q: "The opposite of ancient is _____.", o: ["Old", "Historic", "Modern", "Past"], a: 2, e: "Modern is the opposite of ancient." },
+        { q: "What does rapid mean?", o: ["Slow", "Fast", "Weak", "Quiet"], a: 1, e: "Rapid means fast or quick." },
+        { q: "A synonym of happy is _____.", o: ["Glad", "Upset", "Tired", "Afraid"], a: 0, e: "Glad means happy or pleased." },
+        { q: "The opposite of generous is _____.", o: ["Kind", "Helpful", "Selfish", "Friendly"], a: 2, e: "Selfish contrasts with generous." },
+        { q: "Purchase means _____.", o: ["Sell", "Buy", "Borrow", "Break"], a: 1, e: "Purchase is a formal word for buy." },
+        { q: "Choose the correct spelling.", o: ["Beautifull", "Beutiful", "Beautiful", "Beautifal"], a: 2, e: "The correct spelling is beautiful." },
+        { q: "Assist means _____.", o: ["Help", "Hurt", "Hide", "Refuse"], a: 0, e: "Assist means help." },
+        { q: "An antonym of brave is _____.", o: ["Bold", "Courageous", "Fearful", "Confident"], a: 2, e: "Fearful is an antonym of brave." }
+      ],
+
+      writing: [
+        { q: "Choose the correct sentence.", o: ["He go to school.", "He goes to school.", "He going school.", "He gone to school."], a: 1, e: "He goes is correct in the simple present." },
+        { q: "Choose a formal greeting.", o: ["Hey buddy", "Dear Sir/Madam,", "Hi bro", "What's up?"], a: 1, e: "Dear Sir/Madam is suitable for a formal application." },
+        { q: "Choose the correct capitalization.", o: ["my name is Rahim.", "My name is Rahim.", "My Name is rahim.", "my Name is Rahim."], a: 1, e: "Start a sentence and a person's name with capital letters." },
+        { q: "I was tired, _____ I finished my work.", o: ["but", "because", "unless", "or"], a: 0, e: "But shows contrast." },
+        { q: "Choose a formal letter closing.", o: ["See ya!", "Yours faithfully,", "Bye bro,", "Later!"], a: 1, e: "Yours faithfully is a formal closing." },
+        { q: "Choose the correct punctuation.", o: ["I like tea coffee and milk.", "I like tea, coffee, and milk.", "I like, tea coffee and milk.", "I like tea coffee and milk?"], a: 1, e: "Use commas to separate items in a list." },
+        { q: "Which is a complete sentence?", o: ["Because it rained.", "Running down the road.", "The children played outside.", "When we arrived."], a: 2, e: "This sentence has a subject and a complete predicate." },
+        { q: "_____ , exercise also improves mood.", o: ["However", "Furthermore", "Instead", "Although"], a: 1, e: "Furthermore adds another supporting point." },
+        { q: "Choose the best school paragraph sentence.", o: ["Trees are useful to people and the environment.", "Trees is useful.", "Tree useful!!!", "Trees whatever."], a: 0, e: "The first sentence is clear and grammatically correct." },
+        { q: "Choose a polite email request.", o: ["Send it now.", "Do it!", "Could you please send me the details?", "Gimme details."], a: 2, e: "Could you please is a polite request." }
+      ],
+
+      mixed: [
+        { q: "My brother _____ cricket on Fridays.", o: ["play", "plays", "playing", "played"], a: 1, e: "Use plays with a singular third-person subject." },
+        { q: "A synonym of quick is _____.", o: ["Rapid", "Late", "Weak", "Dull"], a: 0, e: "Quick and rapid mean fast." },
+        { q: "Choose the correct sentence.", o: ["i live in Bangladesh.", "I live in Bangladesh.", "I live in bangladesh.", "i live in bangladesh."], a: 1, e: "Capitalize I and Bangladesh." },
+        { q: "She is good _____ English.", o: ["in", "on", "at", "for"], a: 2, e: "The phrase is good at English." },
+        { q: "The opposite of difficult is _____.", o: ["Hard", "Easy", "Complex", "Tricky"], a: 1, e: "Easy is the opposite of difficult." },
+        { q: "I saw _____ elephant.", o: ["a", "an", "the", "no article"], a: 1, e: "Use an before a vowel sound." },
+        { q: "Choose a polite request.", o: ["Open it now!", "Could you open the window, please?", "Open window.", "Window, open!"], a: 1, e: "Could you please is a polite request." },
+        { q: "Choose the correct spelling.", o: ["Necessary", "Neccessary", "Necesary", "Necassary"], a: 0, e: "The correct spelling is necessary." },
+        { q: "I stayed home _____ I was ill.", o: ["because", "although", "but", "or"], a: 0, e: "Because gives the reason." },
+        { q: "Choose a formal application closing.", o: ["Lots of love,", "Yours obediently,", "Later!", "Cheers mate,"], a: 1, e: "Yours obediently is traditionally used in school applications." }
+      ]
+    };
+
+    const names = {
+      grammar: "Grammar Quiz",
+      vocabulary: "Vocabulary Quiz",
+      writing: "Writing Practice",
+      mixed: "Mixed Quiz"
+    };
+
+    let category = "grammar";
+    let submitted = false;
+
+    const $ = id => document.getElementById(id);
+
+    function renderQuiz() {
+      $("quizTitle").textContent = names[category];
+      $("questions").innerHTML = quizData[category].map((item, i) => `
+        <fieldset class="border rounded-2xl p-4 sm:p-5" data-index="${i}">
+          <legend class="font-bold text-navy leading-7 px-2">
+            <span class="inline-grid place-items-center rounded-lg bg-amber-100 w-8 h-8 mr-2">${i + 1}</span>
+            ${item.q}
+          </legend>
+          <div class="grid sm:grid-cols-2 gap-3 mt-4">
+            ${item.o.map((option, j) => `
+              <label class="option flex gap-3 items-center border rounded-xl p-3 cursor-pointer hover:bg-slate-50">
+                <input type="radio" name="q${i}" value="${j}" class="accent-slate-800">
+                <span>${String.fromCharCode(65 + j)}. ${option}</span>
+              </label>
+            `).join("")}
+          </div>
+        </fieldset>
+      `).join("");
+
+      $("results").hidden = true;
+      $("message").textContent = "";
+      $("submit").disabled = false;
+      submitted = false;
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const total = quizData[category].length;
+      const answered = $("questions").querySelectorAll("input:checked").length;
+      $("progressText").textContent = `${answered} / ${total} answered`;
+      $("progressBar").style.width = `${answered / total * 100}%`;
+    }
+
+    function resetQuiz() {
+      renderQuiz();
+    }
+
+    $("questions").addEventListener("change", updateProgress);
+
+    document.querySelectorAll(".category").forEach(button => {
+      button.addEventListener("click", () => {
+        category = button.dataset.category;
+
+        document.querySelectorAll(".category").forEach(card => {
+          card.classList.toggle("border-navy", card === button);
+          card.classList.toggle("border-transparent", card !== button);
+        });
+
+        renderQuiz();
+        $("quizSection").scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    $("quizForm").addEventListener("submit", event => {
+      event.preventDefault();
+      if (submitted) return;
+
+      const questions = quizData[category];
+      const unanswered = questions.filter((item, i) =>
+        !$(`questions`).querySelector(`input[name="q${i}"]:checked`)
+      ).length;
+
+      if (unanswered) {
+        $("message").textContent =
+          `Please answer all questions. ${unanswered} remaining.`;
+        return;
+      }
+
+      let score = 0;
+      $("review").innerHTML = "";
+
+      questions.forEach((item, i) => {
+        const selected = Number(
+          $("questions").querySelector(`input[name="q${i}"]:checked`).value
+        );
+        const correct = selected === item.a;
+        if (correct) score++;
+
+        $("questions").querySelectorAll(
+          `fieldset[data-index="${i}"] .option`
+        ).forEach((label, j) => {
+          label.querySelector("input").disabled = true;
+          if (j === item.a) label.classList.add("correct");
+          if (j === selected && !correct) label.classList.add("wrong");
+        });
+
+        const reviewItem = document.createElement("article");
+        reviewItem.className = "border rounded-xl p-4";
+
+        const title = document.createElement("h4");
+        title.className = "font-bold text-navy";
+        title.textContent = `${i + 1}. ${item.q}`;
+
+        const yourAnswer = document.createElement("p");
+        yourAnswer.className = "text-sm mt-2";
+        yourAnswer.textContent = `Your answer: ${item.o[selected]}`;
+
+        const answer = document.createElement("p");
+        answer.className = "text-sm mt-1 text-green-700 font-semibold";
+        answer.textContent = `Correct answer: ${item.o[item.a]}`;
+
+        const explanation = document.createElement("p");
+        explanation.className = "text-sm mt-2 text-slate-600";
+        explanation.textContent = item.e;
+
+        reviewItem.append(title, yourAnswer, answer, explanation);
+        $("review").append(reviewItem);
+      });
+
+      submitted = true;
+      const percent = Math.round(score / questions.length * 100);
+      $("score").textContent = `${score} / ${questions.length}`;
+      $("feedback").textContent = percent >= 80
+        ? "Excellent work! Keep it up!"
+        : percent >= 50
+          ? "Good effort! Review your mistakes and try again."
+          : "Keep practicing. You will improve!";
+
+      $("results").hidden = false;
+      $("message").textContent = "";
+      $("submit").disabled = true;
+      $("results").scrollIntoView({ behavior: "smooth" });
+    });
+
+    $("restart").addEventListener("click", resetQuiz);
+    $("tryAgain").addEventListener("click", resetQuiz);
+
+    renderQuiz();
+  </script>
+</body>
+</html>
